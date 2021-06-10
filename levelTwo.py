@@ -31,7 +31,7 @@ df["category"] = data_df['ISSUE_CATEGORY']
 #manually check all categories value counts and determine best workers count
 #this part should be done in for loop for all categories
 filterinfDataframe = df[(df['category'] == "HR")]
-finans_list = filterinfDataframe["WORKER"].value_counts().head(5).index.tolist()
+finans_list = filterinfDataframe["WORKER"].value_counts().head(4).index.tolist()
 model_df = filterinfDataframe.loc[filterinfDataframe['WORKER'].isin(finans_list)]
 model_df = model_df.drop("category", axis=1)
 #
