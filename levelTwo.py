@@ -11,10 +11,7 @@ from random_forest import randomForest
 df = pd.read_csv('dataframe_to_use.csv')
 
 df = df.drop("ISSUE_SUB_CATEGORY", axis=1)
-
-
 data_df = pd.read_csv('data.csv')
-
 
 #merge issue categories under super categories
 data_df[['ISSUE_CATEGORY']] = data_df[['ISSUE_CATEGORY']].replace(

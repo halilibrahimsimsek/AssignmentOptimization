@@ -58,6 +58,7 @@ class randomForest:
 
 
     def rf_with_feature_select(self, df):
+        # run models
         y = df['WORKER'].values
         X = df.drop('WORKER', axis=1).values
         columns = df.drop('WORKER', axis=1)

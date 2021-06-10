@@ -39,6 +39,7 @@ def kNeighbors(df):
         print("accuracy : ", accuracy_score(y_test, y_pred))
 
 
+    #run models
     y = df['WORKER'].values
     X = df.drop('WORKER', axis=1).values
     columns = df.drop('WORKER', axis=1)

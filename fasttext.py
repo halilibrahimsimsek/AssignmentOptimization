@@ -60,6 +60,7 @@ visualizer = KElbowVisualizer(model, k=(1, 12))
 visualizer.fit(item_vectors)  # Fit the data to the visualizer
 visualizer.show()  # Finalize and render the figure
 
+#cluster summary filed with knn after fasttext impl
 kmeans = KMeans(n_clusters=7, random_state=0).fit(item_vectors)
 y_kmeans = kmeans.predict(item_vectors)
 centers = kmeans.cluster_centers_
