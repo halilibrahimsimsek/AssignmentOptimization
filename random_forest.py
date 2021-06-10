@@ -1,11 +1,9 @@
-from sklearn import metrics
 from sklearn.metrics import confusion_matrix, roc_auc_score, accuracy_score
 from sklearn.model_selection import RandomizedSearchCV, train_test_split
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import precision_recall_fscore_support as score
 import FeatureSelect as fs
-#import matplotlib.pyplot as plt
 
 class randomForest:
 
@@ -14,9 +12,6 @@ class randomForest:
         print("Selected Features: ")
         print(selected_feat)
 
-        # Number of trees in random forest
-        # n_estimators = [int(x) for x in np.linspace(start=200, stop=2000, num=10)]
-        # Number of features to consider at every split
         max_features = ['auto', 'sqrt']
         # Maximum number of levels in tree
         max_depth = [int(x) for x in np.linspace(10, 110, num=11)]
@@ -38,12 +33,11 @@ class randomForest:
         # Use the random grid to search for best hyperparameters
         # First create the base model to tune
         rf = RandomForestClassifier()
-        # Random search of parameters, using 3 fold cross validation,
-        # search across 100 different combinations, and use all available cores
+
         rf_random = RandomizedSearchCV(estimator=rf, param_distributions=random_grid, cv=10)
         # Fit the random search model
 
-        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.4, random_state=42)
+        x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
         rf_random.fit(x_train, y_train)
 
         y_pred = rf_random.best_estimator_.predict(x_test)
