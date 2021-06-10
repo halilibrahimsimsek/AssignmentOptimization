@@ -1,6 +1,6 @@
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.feature_selection import SelectFromModel, SelectKBest, mutual_info_classif,chi2
-
+# feature selection impl
 def extraTrees(X,y,columns,treeEst=100):
     #Tree-based feature selection
     clf = ExtraTreesClassifier(n_estimators=treeEst)

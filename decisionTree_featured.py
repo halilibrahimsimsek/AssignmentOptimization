@@ -44,6 +44,7 @@ def decisionTree(df):
         print("Best score is {}".format(tree_cv.best_score_))
         print('Test set score:   {}'.format(tree_cv.score(X_test, y_test)))
 
+    #run models
     y = df['WORKER'].values
     X = df.drop('WORKER', axis=1).values
     columns = df.drop('WORKER', axis=1)

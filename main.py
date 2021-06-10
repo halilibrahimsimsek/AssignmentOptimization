@@ -7,6 +7,7 @@ import svmClassification as sc
 
 df = pd.read_csv('data.csv')
 
+#merge issue categories
 df[['ISSUE_CATEGORY']] = df[['ISSUE_CATEGORY']].replace(dict.fromkeys(['AP','AR','FA','GL','GRC','PA','FAH'], 'FINANS'))
 df[['ISSUE_CATEGORY']] = df[['ISSUE_CATEGORY']].replace(dict.fromkeys(['Database','LINUX','Development', 'Custom', 'XTR','Org Pub','Sysadmin','IT','BI'], 'DEV'))
 df[['ISSUE_CATEGORY']] = df[['ISSUE_CATEGORY']].replace(dict.fromkeys(['INV','QA','PO','IPROC','ISUPPLIER','OPM Costing','EAM'], 'LOJISTIK'))

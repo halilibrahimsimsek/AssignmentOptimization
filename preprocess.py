@@ -1,6 +1,4 @@
 import pandas as pd
-import csv
-import numpy as np
 
 def factorize(df,columns_to_factorize):
     for col in columns_to_factorize:

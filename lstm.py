@@ -8,6 +8,10 @@ from snowballstemmer import TurkishStemmer
 import nltk
 import pandas as pd
 import matplotlib.pyplot as plt
+
+#Categorize DESCRIPTION feature with lstm
+
+
 df = pd.read_csv('data.csv')
 
 
